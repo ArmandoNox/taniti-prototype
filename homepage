@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniti Low-Fidelity Wireframe</title>
+    <style>
+        :root { --wireframe-bg: #f4f4f4; --wireframe-border: #333; --wireframe-gray: #d9d9d9; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #000; }
+        .image-placeholder { background-color: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; position: relative; overflow: hidden; height: 150px; }
+        .image-placeholder::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: #999; transform: rotate(25deg) translateY(50px); opacity: 0.3; }
+        .container { max-width: 1200px; margin: 0 auto; border: 2px dashed #aaa; padding: 20px; }
+        header { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .logo-box { width: 150px; height: 50px; background: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; }
+        nav a { margin-left: 20px; text-decoration: underline; color: blue; cursor: pointer; }
+        .hero { border: 3px solid var(--wireframe-border); padding: 20px; margin-bottom: 30px; display: flex; gap: 20px; align-items: center; }
+        .grid-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; flex-direction: column; }
+        .card button { margin-top: auto; padding: 10px; background: white; border: 2px solid var(--wireframe-border); cursor: pointer; font-weight: bold; }
+        .card button:hover { background: #eee; }
+        footer { border: 3px solid var(--wireframe-border); padding: 20px; text-align: center; background: var(--wireframe-gray); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-box">[LOGO]</div>
+            <nav><a>Home</a><a href="things_to_do.html">Things to Do</a><a>Lodging</a><a>Dining</a><a>Transport</a></nav>
+        </header>
+        <section class="hero">
+            <div class="image-placeholder" style="width:50%; height:250px;">[HERO IMAGE]</div>
+            <div style="width:50%;">
+                <h1>Discover Taniti</h1>
+                <p>Experience sandy beaches, lush rainforests, and the active volcano.</p>
+                <button style="padding:10px; background:#333; color:white;">Plan Your Trip</button>
+            </div>
+        </section>
+        <main class="grid-section">
+            <!-- THIS IS THE IMPORTANT BUTTON FOR THE ASSIGNMENT -->
+            <article class="card">
+                <div class="image-placeholder">[IMG]</div>
+                <h3>Things to Do</h3>
+                <p>Explore the volcano, snorkeling, and rainforest.</p>
+                <!-- This onClick makes it interactive -->
+                <button onclick="window.location.href='things_to_do.html'">See Activities</button>
+            </article>
+            <article class="card"><div class="image-placeholder">[IMG]</div><h3>Where to Stay</h3><p>Hotels, B&Bs, and hostels.</p><button>Find Lodging</button></article>
+            <article class="card"><div class="image-placeholder">[IMG]</div><h3>Dining</h3><p>Local seafood and Pan-Asian cuisine.</p><button>Explore Dining</button></article>
+            <article class="card"><div class="image-placeholder">[IMG]</div><h3>Transport</h3><p>Buses, taxis, and rental cars.</p><button>View Transport</button></article>
+        </main>
+        <footer><p>Links: About Us | Contact | Privacy Policy</p></footer>
+    </div>
+</body>
+</html>
