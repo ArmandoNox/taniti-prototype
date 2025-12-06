@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniti - Things to Do</title>
+    <style>
+        :root { --wireframe-bg: #f4f4f4; --wireframe-border: #333; --wireframe-gray: #d9d9d9; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #000; }
+        .image-placeholder { background-color: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; position: relative; overflow: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; border: 2px dashed #aaa; padding: 20px; }
+        header { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logo-box { width: 150px; height: 50px; background: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; }
+        nav a { margin-left: 20px; text-decoration: underline; color: blue; cursor: pointer; }
+        .breadcrumb { margin-bottom: 20px; font-size: 14px; color: #555; }
+        .activity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .activity-card { border: 2px solid var(--wireframe-border); display: flex; padding: 10px; gap: 15px; }
+        .activity-thumb { width: 100px; height: 100px; flex-shrink: 0; }
+        footer { border: 3px solid var(--wireframe-border); padding: 20px; text-align: center; background: var(--wireframe-gray); margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-box">[LOGO]</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a style="font-weight: bold; color: black; text-decoration: none;">Things to Do</a>
+                <a>Lodging</a>
+                <a>Dining</a>
+                <a>Transport</a>
+            </nav>
+        </header>
+        <div class="breadcrumb"><a href="index.html">Home</a> <span>&gt;</span> Things to Do</div>
+        <h1>Attractions & Activities</h1>
+        <div class="activity-grid">
+            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Beaches</h3><p>Relax on sandy beaches.</p></div></div>
+            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Rainforest Zip-Lining</h3><p>Hike or zip-line.</p></div></div>
+            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Volcano Tours</h3><p>See the active volcano.</p></div></div>
+            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Museums</h3><p>Local history museum.</p></div></div>
+        </div>
+        <footer><p>&copy; 2024 Taniti Tourism Board</p></footer>
+    </div>
+</body>
+</html>
