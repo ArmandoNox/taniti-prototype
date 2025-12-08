@@ -7,39 +7,188 @@
     <style>
         :root { --wireframe-bg: #f4f4f4; --wireframe-border: #333; --wireframe-gray: #d9d9d9; }
         body { font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #000; }
-        .image-placeholder { background-color: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; position: relative; overflow: hidden; }
+
         .container { max-width: 1200px; margin: 0 auto; border: 2px dashed #aaa; padding: 20px; }
-        header { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .image-placeholder { background-color: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; position: relative; overflow: hidden; }
+
+        /* Header (Consistent with Index) */
+        header { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
         .logo-box { width: 150px; height: 50px; background: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; }
-        nav a { margin-left: 20px; text-decoration: underline; color: blue; cursor: pointer; }
+        nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        nav a { text-decoration: underline; color: blue; cursor: pointer; }
+        .search-bar { padding: 5px; border: 2px solid var(--wireframe-border); width: 200px; }
+        .login-btn { font-weight: bold; text-decoration: none; border: 2px solid #333; padding: 5px 10px; }
+
         .breadcrumb { margin-bottom: 20px; font-size: 14px; color: #555; }
-        .activity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .activity-card { border: 2px solid var(--wireframe-border); display: flex; padding: 10px; gap: 15px; }
+
+        /* Controls Section (Filters) */
+        .controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 15px; }
+        .filters button { padding: 8px 12px; margin-left: 5px; border: 2px solid var(--wireframe-border); background: white; cursor: pointer; }
+        .filters button:hover, .filters button.active { background: #ddd; }
+
+        /* Layout Grid */
+        .content-wrapper { display: flex; gap: 30px; }
+
+        .activity-grid { flex: 3; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .activity-card { border: 2px solid var(--wireframe-border); display: flex; padding: 10px; gap: 15px; align-items: flex-start; }
         .activity-thumb { width: 100px; height: 100px; flex-shrink: 0; }
+        .card-content { display: flex; flex-direction: column; justify-content: space-between; width: 100%; }
+        .card-content h3 { margin-top: 0; margin-bottom: 5px; }
+        .card-content p { margin-bottom: 10px; font-size: 0.9rem; }
+        /* Usability Fix: Action Buttons */
+        .action-btn { padding: 5px 10px; background: #333; color: white; border: none; cursor: pointer; align-self: flex-start; font-size: 0.8rem; }
+
+        /* Sidebar */
+        .sidebar { flex: 1; border: 2px solid var(--wireframe-border); padding: 15px; height: fit-content; }
+        .sidebar h3 { margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .tip-box { margin-bottom: 20px; }
+        .tip-title { font-weight: bold; display: block; margin-bottom: 3px; }
+
         footer { border: 3px solid var(--wireframe-border); padding: 20px; text-align: center; background: var(--wireframe-gray); margin-top: 30px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper { flex-direction: column; }
+            .sidebar { order: -1; } /* Tips on top for mobile? Or keep bottom. Let's keep default or move sidebar below on mobile. */
+            .sidebar { order: 1; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-box">[LOGO]</div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a style="font-weight: bold; color: black; text-decoration: none;">Things to Do</a>
-                <a>Lodging</a>
-                <a>Dining</a>
-                <a>Transport</a>
-            </nav>
-        </header>
-        <div class="breadcrumb"><a href="index.html">Home</a> <span>&gt;</span> Things to Do</div>
+<div class="container">
+    <header>
+        <div class="logo-box">[LOGO]</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a style="font-weight: bold; color: black; text-decoration: none;">Things to Do</a>
+            <a>Lodging</a>
+            <a>Dining</a>
+            <a>Transport</a>
+            <input type="text" class="search-bar" placeholder="Search activities...">
+            <a href="#" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>&gt;</span> Things to Do</div>
+
+    <div class="controls">
         <h1>Attractions & Activities</h1>
-        <div class="activity-grid">
-            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Beaches</h3><p>Relax on sandy beaches.</p></div></div>
-            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Rainforest Zip-Lining</h3><p>Hike or zip-line.</p></div></div>
-            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Volcano Tours</h3><p>See the active volcano.</p></div></div>
-            <div class="activity-card"><div class="image-placeholder activity-thumb">[IMG]</div><div><h3>Museums</h3><p>Local history museum.</p></div></div>
+        <div class="filters">
+            <span>Filter by:</span>
+            <button class="active">All</button>
+            <button>Outdoor</button>
+            <button>Cultural</button>
+            <button>Nightlife</button>
+            <!-- Usability Fix: Family Filter added -->
+            <button style="font-weight:bold;">Family / Kids</button>
         </div>
-        <footer><p>&copy; 2024 Taniti Tourism Board</p></footer>
     </div>
+
+    <div class="content-wrapper">
+        <div class="activity-grid">
+            <!-- Card 1 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Beaches & Harbor</h3>
+                    <p>Relax on sandy beaches or explore the rocky coastline. Visit Merriton Landing's safe harbor.</p>
+                    <button class="action-btn">View Map</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Rainforest Zip-Lining</h3>
+                    <p>Hike through lush tropical rainforests or take a zip-lining tour for an adrenaline rush.</p>
+                    <button class="action-btn">Book Tour</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Active Volcano Tours</h3>
+                    <p>Guided treks to the mountainous interior to view the island's small active volcano.</p>
+                    <button class="action-btn">See Schedule</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Snorkeling & Fishing</h3>
+                    <p>Book a chartered fishing boat or rent gear for snorkeling in our clear waters.</p>
+                    <button class="action-btn">Rent Gear</button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Museums & Arts</h3>
+                    <p>Visit the local history museum or browse the many art galleries in Taniti City.</p>
+                    <button class="action-btn">More Info</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Nightlife & Dining</h3>
+                    <p>Check out the new dance club, local microbrewery, and various pubs.</p>
+                    <button class="action-btn">View Venues</button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Family Entertainment</h3>
+                    <p>Rainy day? Visit the arcade, bowling alley, or catch a film at the movie theater.</p>
+                    <button class="action-btn">Check Hours</button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="activity-card">
+                <div class="image-placeholder activity-thumb">[IMG]</div>
+                <div class="card-content">
+                    <h3>Helicopter Rides</h3>
+                    <p>Get a bird's eye view of the island's diverse terrain and coastline.</p>
+                    <button class="action-btn">Check Prices</button>
+                </div>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <h3>Traveler Tips</h3>
+            <div class="tip-box">
+                <span class="tip-title">Holidays:</span>
+                <small>Many attractions close on national holidays. Plan ahead!</small>
+            </div>
+            <div class="tip-box">
+                <span class="tip-title">Safety:</span>
+                <small>Taniti is safe, but watch for petty crime in busy tourist areas.</small>
+            </div>
+            <div class="tip-box">
+                <span class="tip-title">Currency:</span>
+                <small>US Dollars accepted everywhere. Major credit cards accepted.</small>
+            </div>
+            <div class="image-placeholder" style="height: 100px; margin-top: 20px;">[AD: Bus Map Download]</div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>Links: About Us | Contact | Privacy Policy</p>
+        <p>&copy; 2025 Taniti Tourism Board</p>
+    </footer>
+</div>
 </body>
 </html>
