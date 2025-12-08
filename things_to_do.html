@@ -11,7 +11,6 @@
         .container { max-width: 1200px; margin: 0 auto; border: 2px dashed #aaa; padding: 20px; }
         .image-placeholder { background-color: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; position: relative; overflow: hidden; }
 
-        /* Header (Consistent with Index) */
         header { border: 3px solid var(--wireframe-border); padding: 15px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px; }
         .logo-box { width: 150px; height: 50px; background: var(--wireframe-gray); border: 2px solid var(--wireframe-border); display: flex; align-items: center; justify-content: center; }
         nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
@@ -21,12 +20,10 @@
 
         .breadcrumb { margin-bottom: 20px; font-size: 14px; color: #555; }
 
-        /* Controls Section (Filters) */
         .controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid #ccc; padding-bottom: 15px; }
         .filters button { padding: 8px 12px; margin-left: 5px; border: 2px solid var(--wireframe-border); background: white; cursor: pointer; }
         .filters button:hover, .filters button.active { background: #ddd; }
 
-        /* Layout Grid */
         .content-wrapper { display: flex; gap: 30px; }
 
         .activity-grid { flex: 3; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -35,10 +32,8 @@
         .card-content { display: flex; flex-direction: column; justify-content: space-between; width: 100%; }
         .card-content h3 { margin-top: 0; margin-bottom: 5px; }
         .card-content p { margin-bottom: 10px; font-size: 0.9rem; }
-        /* Usability Fix: Action Buttons */
         .action-btn { padding: 5px 10px; background: #333; color: white; border: none; cursor: pointer; align-self: flex-start; font-size: 0.8rem; }
 
-        /* Sidebar */
         .sidebar { flex: 1; border: 2px solid var(--wireframe-border); padding: 15px; height: fit-content; }
         .sidebar h3 { margin-top: 0; border-bottom: 2px solid #333; padding-bottom: 5px; }
         .tip-box { margin-bottom: 20px; }
@@ -46,7 +41,6 @@
 
         footer { border: 3px solid var(--wireframe-border); padding: 20px; text-align: center; background: var(--wireframe-gray); margin-top: 30px; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .content-wrapper { flex-direction: column; }
             .sidebar { order: -1; } /* Tips on top for mobile? Or keep bottom. Let's keep default or move sidebar below on mobile. */
@@ -79,14 +73,12 @@
             <button>Outdoor</button>
             <button>Cultural</button>
             <button>Nightlife</button>
-            <!-- Usability Fix: Family Filter added -->
             <button style="font-weight:bold;">Family / Kids</button>
         </div>
     </div>
 
     <div class="content-wrapper">
         <div class="activity-grid">
-            <!-- Card 1 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -96,7 +88,6 @@
                 </div>
             </div>
 
-            <!-- Card 2 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -106,7 +97,6 @@
                 </div>
             </div>
 
-            <!-- Card 3 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -116,7 +106,6 @@
                 </div>
             </div>
 
-            <!-- Card 4 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -126,7 +115,6 @@
                 </div>
             </div>
 
-            <!-- Card 5 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -136,7 +124,6 @@
                 </div>
             </div>
 
-            <!-- Card 6 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -146,7 +133,6 @@
                 </div>
             </div>
 
-            <!-- Card 7 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
@@ -156,7 +142,6 @@
                 </div>
             </div>
 
-            <!-- Card 8 -->
             <div class="activity-card">
                 <div class="image-placeholder activity-thumb">[IMG]</div>
                 <div class="card-content">
